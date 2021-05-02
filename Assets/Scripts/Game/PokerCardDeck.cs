@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Game.Interfaces;
 using Game.Types;
 using ScriptableObjects;
+using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
 
@@ -32,6 +33,11 @@ namespace Game
             }
 
             return onHandCards;
+        }
+
+        public Sprite GetCardBack()
+        {
+            return _cardsData.BackVisual;
         }
     }
 }
