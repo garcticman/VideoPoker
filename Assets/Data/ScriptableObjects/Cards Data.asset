@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05db6fcafb41b44468d9f40f131c068e, type: 3}
+  m_Name: Cards Data
+  m_EditorClassIdentifier: 
+  cards:
+  - cardSprite: {fileID: 21300000, guid: 4f90b413978306c40b34f874e45dbc93, type: 3}
+    rank: 2
+    suite: 2
+  - cardSprite: {fileID: 21300000, guid: d53c2b13ad2ba92469a3657a0fc07d17, type: 3}
+    rank: 2
+    suite: 1
+  - cardSprite: {fileID: 21300000, guid: 31dcd449ac4a9da47aa296dc81e41340, type: 3}
+    rank: 2
+    suite: 0
+  - cardSprite: {fileID: 21300000, guid: faf79b4b4ec0090429c18b896d46d42b, type: 3}
+    rank: 2
+    suite: 3
+  - cardSprite: {fileID: 21300000, guid: 7abb1e64ff0706349abe39fb3a7e722f, type: 3}
+    rank: 3
+    suite: 2
+  - cardSprite: {fileID: 21300000, guid: e9823373a67edfb47af10a6df208f7f3, type: 3}
+    rank: 3
+    suite: 1
+  - cardSprite: {fileID: 21300000, guid: b6298d5cb9bec4d4c9ca0e90fb1f80a5, type: 3}
+    rank: 3
+    suite: 0
+  - cardSprite: {fileID: 21300000, guid: 04ca768f12e44944499dcd06c59d4979, type: 3}
+    rank: 3
+    suite: 3
+  - cardSprite: {fileID: 21300000, guid: 5f874c66e81bf1946813bd9fc5f2d17f, type: 3}
+    rank: 4
+    suite: 2
+  - cardSprite: {fileID: 21300000, guid: 050271fc2654e6e4394245bce1c8d8f1, type: 3}
+    rank: 4
+    suite: 1
+  - cardSprite: {fileID: 21300000, guid: db2bfb0d34bbadc4eb1e651d5f69d9f2, type: 3}
+    rank: 4
+    suite: 0
+  - cardSprite: {fileID: 21300000, guid: cd8d63edb173df047b89878889430653, type: 3}
+    rank: 4
+    suite: 3
+  - cardSprite: {fileID: 21300000, guid: b28edb28d0bb6484d9ce05a20c1622cf, type: 3}
+    rank: 5
+    suite: 2
+  - cardSprite: {fileID: 21300000, guid: c0daf123309c61446bf2852bca770abe, type: 3}
+    rank: 5
+    suite: 1
+  - cardSprite: {fileID: 21300000, guid: 87756076df6804d48831645d7708703a, type: 3}
+    rank: 5
+    suite: 0
+  - cardSprite: {fileID: 21300000, guid: 7c9856dd514c101499f842730ee8b407, type: 3}
+    rank: 5
+    suite: 3
+  - cardSprite: {fileID: 21300000, guid: 9da3fe65ceaddc94f8201de062ea8151, type: 3}
+    rank: 6
+    suite: 2
+  - cardSprite: {fileID: 21300000, guid: d91f5d09023e051409fbf3896cb72dd6, type: 3}
+    rank: 6
+    suite: 1
+  - cardSprite: {fileID: 21300000, guid: c021d0db7fecf184bbe836fc0b98f0d4, type: 3}
+    rank: 6
+    suite: 0
+  - cardSprite: {fileID: 21300000, guid: beb77382ca4e64641b95c2925864654f, type: 3}
+    rank: 6
+    suite: 3
+  - cardSprite: {fileID: 21300000, guid: 53fb88c3f9eb68d4492180130b5cc33f, type: 3}
+    rank: 7
+    suite: 2
+  - cardSprite: {fileID: 21300000, guid: 69f7e54a5bb13f64cad65785b5dfbf98, type: 3}
+    rank: 7
+    suite: 1
+  - cardSprite: {fileID: 21300000, guid: 510f9f4ca3f52814f9811d09de19c328, type: 3}
+    rank: 7
+    suite: 0
+  - cardSprite: {fileID: 21300000, guid: 4ad3acee0b6301247b05c5d08d9bcaf6, type: 3}
+    rank: 7
+    suite: 3
+  - cardSprite: {fileID: 21300000, guid: 156ccde69c4af8241b04dcb936cf4e26, type: 3}
+    rank: 8
+    suite: 2
+  - cardSprite: {fileID: 21300000, guid: 2ff22c2a94ac98b40886fd47a3ab4a5a, type: 3}
+    rank: 8
+    suite: 1
+  - cardSprite: {fileID: 21300000, guid: e46df2579422f804eb5ddfa1a9763571, type: 3}
+    rank: 8
+    suite: 0
+  - cardSprite: {fileID: 21300000, guid: 94827d6874a1d3541b0cdf9b083ca7be, type: 3}
+    rank: 8
+    suite: 3
+  - cardSprite: {fileID: 21300000, guid: 30c4f5de7edadf543902797dc33635b0, type: 3}
+    rank: 9
+    suite: 2
+  - cardSprite: {fileID: 21300000, guid: f2dc19fc9d75eb046b5ad714ae9e5240, type: 3}
+    rank: 9
+    suite: 1
+  - cardSprite: {fileID: 21300000, guid: 7b5ff7cb41188d142b9ade193c7a104d, type: 3}
+    rank: 9
+    suite: 0
+  - cardSprite: {fileID: 21300000, guid: c2914225477782645b34dbb3161d81d2, type: 3}
+    rank: 9
+    suite: 3
+  - cardSprite: {fileID: 21300000, guid: 3b87d1f3bb19f264ab2a7f74aa821d9b, type: 3}
+    rank: 10
+    suite: 2
+  - cardSprite: {fileID: 21300000, guid: 4a1f580ea2441f446a7ffc2e584985dc, type: 3}
+    rank: 10
+    suite: 1
+  - cardSprite: {fileID: 21300000, guid: 6a99ae327070b2c4eaf44b06b861f8ec, type: 3}
+    rank: 10
+    suite: 0
+  - cardSprite: {fileID: 21300000, guid: f2ca4a7f873e2334daf226ec3a942240, type: 3}
+    rank: 10
+    suite: 3
+  - cardSprite: {fileID: 21300000, guid: fd6d9e3731d9c5f42843a4e11b80c17e, type: 3}
+    rank: 11
+    suite: 2
+  - cardSprite: {fileID: 21300000, guid: f57dcd5fc9c90b34baae3609d236c555, type: 3}
+    rank: 11
+    suite: 1
+  - cardSprite: {fileID: 21300000, guid: b5e8422f3d8a31f4ebfeb8d276ae558e, type: 3}
+    rank: 11
+    suite: 0
+  - cardSprite: {fileID: 21300000, guid: 9bcab0f5d048a3949bd6e0e013753c8c, type: 3}
+    rank: 11
+    suite: 3
+  - cardSprite: {fileID: 21300000, guid: e7b1988cf326c564493cc4b0f81c1878, type: 3}
+    rank: 12
+    suite: 2
+  - cardSprite: {fileID: 21300000, guid: d465d472f72aca44b82956ee5ba3e904, type: 3}
+    rank: 12
+    suite: 1
+  - cardSprite: {fileID: 21300000, guid: a98aa166c46936f4aac68ed068af9f21, type: 3}
+    rank: 12
+    suite: 0
+  - cardSprite: {fileID: 21300000, guid: 3837226988f91d04081441e678918ca0, type: 3}
+    rank: 12
+    suite: 3
+  - cardSprite: {fileID: 21300000, guid: e7b1988cf326c564493cc4b0f81c1878, type: 3}
+    rank: 13
+    suite: 2
+  - cardSprite: {fileID: 21300000, guid: d465d472f72aca44b82956ee5ba3e904, type: 3}
+    rank: 13
+    suite: 1
+  - cardSprite: {fileID: 21300000, guid: a98aa166c46936f4aac68ed068af9f21, type: 3}
+    rank: 13
+    suite: 0
+  - cardSprite: {fileID: 21300000, guid: 3837226988f91d04081441e678918ca0, type: 3}
+    rank: 13
+    suite: 3
+  - cardSprite: {fileID: 21300000, guid: 511b3da55c8b9254f98ea9c7c8b67dab, type: 3}
+    rank: 14
+    suite: 2
+  - cardSprite: {fileID: 21300000, guid: b3cab3719d5df98469392680b42e1e01, type: 3}
+    rank: 14
+    suite: 1
+  - cardSprite: {fileID: 21300000, guid: e0afb01b3457d9a489c62391ba337c21, type: 3}
+    rank: 14
+    suite: 0
+  - cardSprite: {fileID: 21300000, guid: 78f605ebd368e664ba2f6e44f87058da, type: 3}
+    rank: 14
+    suite: 3
