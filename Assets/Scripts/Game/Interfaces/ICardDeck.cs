@@ -6,7 +6,7 @@ namespace Game.Interfaces
 {
     public interface ICardDeck
     {
-        public Card[] DealCards(int count);
+        public CardData[] DealCards(int count);
         public Sprite GetCardBack();
     }
 }

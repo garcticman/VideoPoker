@@ -6,17 +6,17 @@ namespace Game.UI
 {
     public class CoinButton : MonoBehaviour
     {
-        private SignalBus _signalBus;
+        private SlotMachine _slotMachine;
         
         [Inject]
-        private void Construct(SignalBus signalBus)
+        private void Construct(SlotMachine slotMachine)
         {
-            _signalBus = signalBus;
+            _slotMachine = slotMachine;
         }
         
         public void CoinButtonPressed()
         {
-            _signalBus.Fire(new SignalCoinButton());
+            _slotMachine.CoinButtonPressed();
         }
     }
 }

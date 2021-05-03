@@ -9,11 +9,6 @@ namespace Installers
     {
         public override void InstallBindings()
         {
-            Container.DeclareSignal<SignalCoinButton>();
-            Container.BindSignal<SignalCoinButton>()
-                .ToMethod<SlotMachine>(machine => machine.CoinButtonPressed)
-                .FromResolve();
-
             Container.DeclareSignal<SignalCoinsChanged>();
             Container.BindSignal<SignalCoinsChanged>()
                 .ToMethod<UserCoins>(coins => coins.OnCointCountChanged)

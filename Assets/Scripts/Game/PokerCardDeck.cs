@@ -12,18 +12,18 @@ namespace Game
     public class PokerCardDeck : ICardDeck
     {
         private readonly CardsData _cardsData;
-        private List<Card> _deck;
+        private List<CardData> _deck;
 
         public PokerCardDeck(CardsData cardsData)
         {
             _cardsData = cardsData;
 
-            _deck = new List<Card>(cardsData.Cards);
+            _deck = new List<CardData>(cardsData.Cards);
         }
 
-        public Card[] DealCards(int count)
+        public CardData[] DealCards(int count)
         {
-            Card[] onHandCards = new Card[count];
+            CardData[] onHandCards = new CardData[count];
             
             for (int i = 0; i < count; i++)
             {

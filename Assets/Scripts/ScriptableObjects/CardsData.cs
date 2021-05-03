@@ -9,16 +9,16 @@ namespace ScriptableObjects
     public class CardsData : ScriptableObject
     {
         [SerializeField] private Sprite backVisual;
-        
+
         public Sprite BackVisual
         {
             get => backVisual;
             private set => backVisual = value;
         }
-        
-        [SerializeField] private List<Card> cards = new List<Card>();
 
-        public List<Card> Cards
+        [SerializeField] private List<CardData> cards = new List<CardData>();
+
+        public List<CardData> Cards
         {
             get => cards;
             private set => cards = value;

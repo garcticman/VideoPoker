@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Game.Interfaces;
+using Game.Types;
 using UnityEngine;
 using Zenject;
 
@@ -11,24 +12,34 @@ namespace Game
         [NonSerialized] public bool IsFilled;
         
         private ICardDeck _cardDeck;
-        private SpriteRenderer[] _cards;
+        private Card[] _cards;
         private HashSet<int> _holdedCards = new HashSet<int>();
 
         [Inject]
         private void Construct(ICardDeck cardDeck)
         {
             _cardDeck = cardDeck;
-            _cards = GetComponentsInChildren<SpriteRenderer>();
-
+            
+            InitCardsVisual();
             InitTable();
+        }
+
+        private void InitCardsVisual()
+        {
+            var cardsRenderers = GetComponentsInChildren<SpriteRenderer>();
+            _cards = new Card[cardsRenderers.Length];
+            for (int i = 0; i < cardsRenderers.Length; i++)
+            {
+                _cards[i].renderer = cardsRenderers[i];
+            }
         }
         
         private void InitTable()
         {
             var cardsBack = _cardDeck.GetCardBack();
-            foreach (var t in _cards)
+            foreach (var card in _cards)
             {
-                t.sprite = cardsBack;
+                card.renderer.sprite = cardsBack;
             }
         }
 
@@ -37,7 +48,8 @@ namespace Game
             var cardsData = _cardDeck.DealCards(_cards.Length);
             for (int i = 0; i < _cards.Length; i++)
             {
-                _cards[i].sprite = cardsData[i].cardSprite;
+                _cards[i].data = cardsData[i];
+                _cards[i].renderer.sprite = cardsData[i].cardSprite;
             }
         }
 
