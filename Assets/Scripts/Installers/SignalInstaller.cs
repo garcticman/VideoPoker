@@ -1,5 +1,6 @@
 using Game;
 using Game.UI;
+using MiscUtil.Collections.Extensions;
 using Signals;
 using Zenject;
 
@@ -19,13 +20,18 @@ namespace Installers
                 .ToMethod<Credit>(coins => coins.OnCreditChanged)
                 .FromResolve();
             
-            Container.DeclareSignal<SignalOpenCards>();
-            Container.BindSignal<SignalOpenCards>()
+            Container.DeclareSignal<SignalOpenCloseCards>();
+            Container.BindSignal<SignalOpenCloseCards>()
                 .ToMethod<HoldButtonsContainer>(cont => cont.SwitchGameObjectState)
                 .FromResolve();
-            Container.BindSignal<SignalOpenCards>()
+            Container.BindSignal<SignalOpenCloseCards>()
                 .ToMethod<DealButton>(button => button.SwitchGameObjectState)
                 .FromResolve();
+            
+            Container.DeclareSignal<SignalResetHoldButtons>();
+            Container.BindSignal<SignalResetHoldButtons>()
+                .ToMethod<HoldButton>(holdButton => holdButton.ResetToInitial)
+                .FromResolveAll();
         }
     }
 }

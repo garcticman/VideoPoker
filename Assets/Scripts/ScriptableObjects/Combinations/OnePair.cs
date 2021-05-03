@@ -1,10 +1,11 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Game.Types;
+using UnityEngine;
 
-namespace Game.Combinations
+namespace ScriptableObjects.Combinations
 {
+    [CreateAssetMenu(menuName = "ScriptableObjects/Combinations/OnePair")]
     public class OnePair : Combination
     {
         public override int CheckCombination(CardData[] cards)

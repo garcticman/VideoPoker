@@ -8,5 +8,6 @@ namespace Game.Interfaces
     {
         public CardData[] DealCards(int count);
         public Sprite GetCardBack();
+        void Reset();
     }
 }

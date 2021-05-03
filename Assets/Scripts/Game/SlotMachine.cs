@@ -38,7 +38,7 @@ namespace Game
         {
             _signalBus = signalBus;
             _cardHolder = cardHolder;
-            
+
             UsersCoins = EnoughForGame;
             Credit = 0;
         }
@@ -50,7 +50,7 @@ namespace Game
                 UsersCoins--;
                 Credit++;
                 
-                if (_credit >= EnoughForGame)
+                if (_credit >= EnoughForGame && !_cardHolder.IsFilled)
                 {
                     OpenCards();
                 }
@@ -61,12 +61,26 @@ namespace Game
         {
             Credit -= EnoughForGame;
             _cardHolder.FillCards();
-            _signalBus.Fire<SignalOpenCards>();
+            _signalBus.Fire<SignalOpenCloseCards>();
         }
 
         public void Deal()
         {
-            Debug.Log("Deal");
+            _cardHolder.FillCards();
+            HandleCombinations();
+            _cardHolder.ResetTable();
+            _signalBus.Fire<SignalResetHoldButtons>();
+            _signalBus.Fire<SignalOpenCloseCards>();
+        }
+
+        private void HandleCombinations()
+        {
+            var resultCombination = _cardHolder.TryGetCombination();
+            if (resultCombination != null)
+            {
+                Debug.Log(resultCombination.name);
+                UsersCoins += EnoughForGame + resultCombination.CombinationRank;
+            }
         }
     }
 }

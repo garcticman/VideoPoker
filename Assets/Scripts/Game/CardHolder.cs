@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Game.Interfaces;
 using Game.Types;
+using ScriptableObjects;
 using UnityEngine;
 using Zenject;
 
@@ -9,21 +11,31 @@ namespace Game
 {
     public class CardHolder : MonoBehaviour
     {
-        [NonSerialized] public bool IsFilled;
+        public bool IsFilled { get; private set; } = false;
         
+        private readonly SortedList<int, Combination> _combinations = new SortedList<int, Combination>();
+
         private ICardDeck _cardDeck;
         private Card[] _cards;
-        private HashSet<int> _holdedCards = new HashSet<int>();
+        private readonly HashSet<int> _holdedCards = new HashSet<int>();
 
         [Inject]
-        private void Construct(ICardDeck cardDeck)
+        private void Construct(ICardDeck cardDeck, CombinationsData combinationsData)
         {
             _cardDeck = cardDeck;
-            
+
+            InitCombinations(combinationsData);
             InitCardsVisual();
             InitTable();
         }
 
+        private void InitCombinations(CombinationsData combinationsData)
+        {
+            foreach (var data in combinationsData.Combinations)
+            {   
+                _combinations.Add(data.CombinationRank, data);
+            }
+        }
         private void InitCardsVisual()
         {
             var cardsRenderers = GetComponentsInChildren<SpriteRenderer>();
@@ -45,12 +57,44 @@ namespace Game
 
         public void FillCards()
         {
-            var cardsData = _cardDeck.DealCards(_cards.Length);
-            for (int i = 0; i < _cards.Length; i++)
+            var cardsCount = _cards.Length - _holdedCards.Count;
+            
+            var cardsData = _cardDeck.DealCards(cardsCount);
+            for (int i = 0, j = 0; i < _cards.Length; i++)
             {
-                _cards[i].data = cardsData[i];
-                _cards[i].renderer.sprite = cardsData[i].cardSprite;
+                if (_holdedCards.Contains(i))
+                {
+                    continue;
+                }
+                
+                _cards[i].data = cardsData[j];
+                _cards[i].renderer.sprite = cardsData[j].cardSprite;
+                
+                j++;
             }
+
+            IsFilled = true;
+        }
+
+        public Combination TryGetCombination()
+        {
+            var cardsData = _cards.Select(x => x.data).ToArray();
+            foreach (var combination in _combinations)
+            {
+                if (combination.Value.CheckCombination(cardsData) > 0)
+                {
+                    return combination.Value;
+                }
+            }
+
+            return null;
+        }
+
+        public void ResetTable()
+        {
+            IsFilled = false;
+            _holdedCards.Clear();
+            _cardDeck.Reset();
         }
 
         public void HoldCard(int index)

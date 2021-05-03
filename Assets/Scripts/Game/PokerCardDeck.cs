@@ -1,10 +1,8 @@
-using System;
 using System.Collections.Generic;
 using Game.Interfaces;
 using Game.Types;
 using ScriptableObjects;
 using UnityEngine;
-using Zenject;
 using Random = UnityEngine.Random;
 
 namespace Game
@@ -17,8 +15,7 @@ namespace Game
         public PokerCardDeck(CardsData cardsData)
         {
             _cardsData = cardsData;
-
-            _deck = new List<CardData>(cardsData.Cards);
+            Reset();
         }
 
         public CardData[] DealCards(int count)
@@ -38,6 +35,11 @@ namespace Game
         public Sprite GetCardBack()
         {
             return _cardsData.BackVisual;
+        }
+
+        public void Reset()
+        {
+            _deck = new List<CardData>(_cardsData.Cards);
         }
     }
 }

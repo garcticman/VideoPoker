@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e51c977449cb2f40a0ff2ea9f4f5c70, type: 3}
-  m_Name: DataInstaller
+  m_Script: {fileID: 11500000, guid: 8745636cefbd1f5489f0fecdbdffe779, type: 3}
+  m_Name: One Pair
   m_EditorClassIdentifier: 
-  cardsData: {fileID: 11400000, guid: 6fbd18e8af0c3474980713309f171e28, type: 2}
-  combinationsData: {fileID: 11400000, guid: c470e19aac4d5104b834b0df754e62a9, type: 2}
+  combinationName: One Pair
+  combinationRank: 1

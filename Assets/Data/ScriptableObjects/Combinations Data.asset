@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4438df4ad77a4d1da54cda2298b59436, type: 3}
   m_Name: Combinations Data
   m_EditorClassIdentifier: 
+  combinations:
+  - {fileID: 11400000, guid: ebe2aef9239d83d4999c275a12c49469, type: 2}

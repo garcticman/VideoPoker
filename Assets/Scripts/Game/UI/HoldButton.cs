@@ -10,6 +10,8 @@ namespace Game.UI
     {
         [SerializeField] private byte id;
 
+        public byte ID => id;
+
         private Text _text;
         private CardHolder _cardHolder;
         private bool _isHolded;
@@ -25,16 +27,26 @@ namespace Game.UI
         {
             if (_isHolded)
             {
-                _isHolded = false;
-                _text.text = "Hold";
-                _cardHolder.DiscardCard(id);
+                ResetToInitial();
             }
             else
             {
-                _isHolded = true;
-                _text.text = "Discard";
-                _cardHolder.HoldCard(id);
+                SetToHolded();
             }
+        }
+
+        public void ResetToInitial()
+        {
+            _isHolded = false;
+            _text.text = "Hold";
+            _cardHolder.DiscardCard(id);
+        }
+
+        private void SetToHolded()
+        {
+            _isHolded = true;
+            _text.text = "Discard";
+            _cardHolder.HoldCard(id);
         }
     }
 }

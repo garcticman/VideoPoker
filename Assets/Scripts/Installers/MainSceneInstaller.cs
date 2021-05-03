@@ -25,7 +25,18 @@ namespace Installers
             Container.BindInstance(holdButtonsContainer);
             Container.BindInstance(dealButton);
 
+            BindHoldButtons();
+
             Container.Bind<SlotMachine>().AsSingle().NonLazy();
+        }
+
+        private void BindHoldButtons()
+        {
+            var holdButtons = holdButtonsContainer.GetComponentsInChildren<HoldButton>();
+            foreach (var button in holdButtons)
+            {
+                Container.BindInstance(button).AsTransient();
+            }
         }
     }
 }
