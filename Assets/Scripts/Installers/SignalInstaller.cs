@@ -32,6 +32,11 @@ namespace Installers
             Container.BindSignal<SignalResetHoldButtons>()
                 .ToMethod<HoldButton>(holdButton => holdButton.ResetToInitial)
                 .FromResolveAll();
+            
+            Container.DeclareSignal<SignalCombinationMade>();
+            Container.BindSignal<SignalCombinationMade>()
+                .ToMethod<CombinationText>(text => text.SetCombination)
+                .FromResolve();
         }
     }
 }

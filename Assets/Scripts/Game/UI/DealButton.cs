@@ -1,3 +1,4 @@
+using Signals;
 using UnityEngine;
 using Zenject;
 
@@ -12,9 +13,16 @@ namespace Game.UI
         {
             _slotMachine = slotMachine;
         }
-        public void SwitchGameObjectState()
+        public void SwitchGameObjectState(SignalOpenCloseCards openCloseCards)
         {
-            gameObject.SetActive(!gameObject.activeSelf);
+            if (openCloseCards.ForceClose)
+            {
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                gameObject.SetActive(!gameObject.activeSelf);
+            }
         }
 
         public void OnDealButtonPressed()

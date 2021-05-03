@@ -23,7 +23,7 @@ namespace ScriptableObjects.Combinations
                 }
             }
 
-            return rankToCount.Any(x => x.Value > 1) ? combinationRank : 0;
+            return rankToCount.Any(x => x.Value == 2) ? combinationRank : 0;
         }
     }
 }

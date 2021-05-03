@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Game.Interfaces;
@@ -46,7 +45,7 @@ namespace Game
             }
         }
         
-        private void InitTable()
+        public void InitTable()
         {
             var cardsBack = _cardDeck.GetCardBack();
             foreach (var card in _cards)
@@ -79,7 +78,7 @@ namespace Game
         public Combination TryGetCombination()
         {
             var cardsData = _cards.Select(x => x.data).ToArray();
-            foreach (var combination in _combinations)
+            foreach (var combination in _combinations.Reverse())
             {
                 if (combination.Value.CheckCombination(cardsData) > 0)
                 {

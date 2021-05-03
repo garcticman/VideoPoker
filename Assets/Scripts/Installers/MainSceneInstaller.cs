@@ -14,7 +14,8 @@ namespace Installers
         [SerializeField] private Credit credit;
         [SerializeField] private HoldButtonsContainer holdButtonsContainer;
         [SerializeField] private DealButton dealButton;
-
+        [SerializeField] private CombinationText combinationText;
+        
         public override void InstallBindings()
         {
             var cardHolder = Container.InstantiatePrefabForComponent<CardHolder>(cardHolderPrefab);
@@ -24,6 +25,7 @@ namespace Installers
             Container.BindInstance(credit);
             Container.BindInstance(holdButtonsContainer);
             Container.BindInstance(dealButton);
+            Container.BindInstance(combinationText);
 
             BindHoldButtons();
 

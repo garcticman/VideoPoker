@@ -76,11 +76,21 @@ namespace Game
         private void HandleCombinations()
         {
             var resultCombination = _cardHolder.TryGetCombination();
-            if (resultCombination != null)
-            {
-                Debug.Log(resultCombination.name);
-                UsersCoins += EnoughForGame + resultCombination.CombinationRank;
-            }
+            if (resultCombination == null) return;
+            
+            _signalBus.Fire(new SignalCombinationMade(){CombinationName = resultCombination.CombinationName});
+            UsersCoins += EnoughForGame + resultCombination.CombinationRank;
+        }
+
+        public void Restart()
+        {
+            _cardHolder.ResetTable();
+            _cardHolder.InitTable();
+            _signalBus.Fire<SignalResetHoldButtons>();
+            _signalBus.Fire(new SignalOpenCloseCards(){ForceClose = true});
+            
+            UsersCoins = EnoughForGame;
+            Credit = 0;
         }
     }
 }

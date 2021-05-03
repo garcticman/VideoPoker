@@ -1,16 +1,12 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Zenject;
-using Button = UnityEngine.UIElements.Button;
 
 namespace Game.UI
 {
     public class HoldButton : MonoBehaviour
     {
         [SerializeField] private byte id;
-
-        public byte ID => id;
 
         private Text _text;
         private CardHolder _cardHolder;
