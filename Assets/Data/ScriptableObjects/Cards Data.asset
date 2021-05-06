@@ -146,16 +146,16 @@ MonoBehaviour:
   - cardSprite: {fileID: 21300000, guid: 3837226988f91d04081441e678918ca0, type: 3}
     rank: 12
     suite: 3
-  - cardSprite: {fileID: 21300000, guid: e7b1988cf326c564493cc4b0f81c1878, type: 3}
+  - cardSprite: {fileID: 21300000, guid: 8f804b48f9b390e449cfe5bcd8612c49, type: 3}
     rank: 13
     suite: 2
-  - cardSprite: {fileID: 21300000, guid: d465d472f72aca44b82956ee5ba3e904, type: 3}
+  - cardSprite: {fileID: 21300000, guid: a04cd1b319d0ec440a67d26d2395a98c, type: 3}
     rank: 13
     suite: 1
-  - cardSprite: {fileID: 21300000, guid: a98aa166c46936f4aac68ed068af9f21, type: 3}
+  - cardSprite: {fileID: 21300000, guid: e1a42faf93da2c545a009873fb5270bb, type: 3}
     rank: 13
     suite: 0
-  - cardSprite: {fileID: 21300000, guid: 3837226988f91d04081441e678918ca0, type: 3}
+  - cardSprite: {fileID: 21300000, guid: 60cc52e01aca22141a8dd3d5de2c5a36, type: 3}
     rank: 13
     suite: 3
   - cardSprite: {fileID: 21300000, guid: 511b3da55c8b9254f98ea9c7c8b67dab, type: 3}

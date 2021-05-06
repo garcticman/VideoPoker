@@ -16,7 +16,7 @@ namespace ScriptableObjects.Combinations
             
             for (int i = 1; i < sortedByRank.Count; i++)
             {
-                if ((sortedByRank[i].rank - sortedByRank[i - 1].rank > 1) ||
+                if ((sortedByRank[i].rank - sortedByRank[i - 1].rank != 1) ||
                     sortedByRank[i].suite != sortedByRank[i - 1].suite)
                 {
                     return 0;
